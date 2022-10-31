@@ -15,16 +15,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_172608) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
+    #自動で作成したカラム名：
+     #deviseで登録する時に必要な値：
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+
+    #自動で作成したカラム名：
+     #deviseで登録する時に必要な値（自動的にやってくれる）：
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+    #自分で作成したカラム名：
+    t.string "name" 
   end
 
 end
