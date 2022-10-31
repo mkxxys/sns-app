@@ -29,4 +29,9 @@
   <div class="actions">
     <%= f.submit "CREATE ACCOUNT" %>
   </div>
+
+  <p class="devise-link">
+    アカウントをお持ちですか？<br />
+    <%= link_to "ログイン", new_user_session_path %>
+  </p>
 <% end %>

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
       root_path
     end
 
+    def after_sign_out_path_for(resource)
+      user_session_path
+    end
+
     # def current_user
     #   ActiveDecorator::Decorator.instance.decorate(super) if super.present?
     #   super
